@@ -19,30 +19,20 @@
         <!-- Global Version Properties for All Minecraft Generations -->
         <!-- Legacy Era (1.7 - 1.11) - Java 8 -->
         <spigot.api.1_7_R4>1.7.10-R0.1-SNAPSHOT</spigot.api.1_7_R4>
-        <spigot.api.1_8_R1>1.8.8-R0.1-SNAPSHOT</spigot.api.1_8_R1>
-        <spigot.api.1_9_R1>1.9.4-R0.1-SNAPSHOT</spigot.api.1_9_R1>
-        <spigot.api.1_10_R1>1.10.2-R0.1-SNAPSHOT</spigot.api.1_10_R1>
-        <spigot.api.1_11_R1>1.11.2-R0.1-SNAPSHOT</spigot.api.1_11_R1>
         
         <!-- Classic Era (1.12 - 1.16) - Java 11/16 -->
         <spigot.api.1_12_R1>1.12.2-R0.1-SNAPSHOT</spigot.api.1_12_R1>
-        <spigot.api.1_13_R1>1.13.2-R0.1-SNAPSHOT</spigot.api.1_13_R1>
-        <spigot.api.1_14_R1>1.14.4-R0.1-SNAPSHOT</spigot.api.1_14_R1>
-        <spigot.api.1_15_R1>1.15.2-R0.1-SNAPSHOT</spigot.api.1_15_R1>
         <spigot.api.1_16_R1>1.16.5-R0.1-SNAPSHOT</spigot.api.1_16_R1>
         
         <!-- Modern Era (1.17 - 1.20.4) - Java 17 -->
-        <paper.api.1_17_R1>1.17.1-426</paper.api.1_17_R1>
-        <paper.api.1_18_R1>1.18.2-391</paper.api.1_18_R1>
-        <paper.api.1_19_R1>1.19.4-511</paper.api.1_19_R1>
-        <paper.api.1_20_R1>1.20.1-196</paper.api.1_20_R1>
-        <paper.api.1_20_R2>1.20.4-456</paper.api.1_20_R2>
+        <paper.api.1_20_R1>1.20-R0.1-20230612.173152-16</paper.api.1_20_R1>
+        <paper.api.1_20_R2>1.20.4-R0.1-20240420.193509-172</paper.api.1_20_R2>
         
         <!-- Contemporary Era (1.20.5 - 26.2+) - Java 21/25 -->
-        <paper.api.1_20_R3>1.20.6-115</paper.api.1_20_R3>
-        <paper.api.1_21_R1>1.21.1-112</paper.api.1_21_R1>
-        <paper.api.26_1_2>26.1.2</paper.api.26_1_2>
-        <paper.api.26_2_0>26.2.0</paper.api.26_2_0>
+        <paper.api.1_20_R3>1.20.6-R0.1-20240617.192752-123</paper.api.1_20_R3>
+        <paper.api.1_21_R1>1.21-R0.1-20240805.191212-128</paper.api.1_21_R1>
+        <paper.api.26_1_2>26.1.build.30-stable</paper.api.26_1_2>
+        <paper.api.26_2_0>26.2.build.83-stable</paper.api.26_2_0>
         
         <!-- Plugin Version Target (Latest) -->
         <paper.api.version>${paper.api.26_2_0}</paper.api.version>
@@ -67,22 +57,12 @@
         
         <!-- Legacy Era Modules (1.7 - 1.11) - Java 8 -->
         <module>v1_7_R4</module>
-        <module>v1_8_R1</module>
-        <module>v1_9_R1</module>
-        <module>v1_10_R1</module>
-        <module>v1_11_R1</module>
         
         <!-- Classic Era Modules (1.12 - 1.16) - Java 11/16 -->
         <module>v1_12_R1</module>
-        <module>v1_13_R1</module>
-        <module>v1_14_R1</module>
-        <module>v1_15_R1</module>
         <module>v1_16_R1</module>
         
         <!-- Modern Era Modules (1.17 - 1.20.4) - Java 17 -->
-        <module>v1_17_R1</module>
-        <module>v1_18_R1</module>
-        <module>v1_19_R1</module>
         <module>v1_20_R1</module>
         <module>v1_20_R2</module>
         
@@ -131,68 +111,6 @@
                 <version>${project.version}</version>
             </dependency>
             
-            <!-- Legacy Era API Dependencies (Java 8) -->
-            <dependency>
-                <groupId>org.spigotmc</groupId>
-                <artifactId>spigot-api</artifactId>
-                <version>${spigot.api.1_7_R4}</version>
-                <scope>provided</scope>
-            </dependency>
-            
-            <!-- Classic Era API Dependencies (Java 11/16) -->
-            <dependency>
-                <groupId>org.spigotmc</groupId>
-                <artifactId>spigot-api</artifactId>
-                <version>${spigot.api.1_12_R1}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.spigotmc</groupId>
-                <artifactId>spigot-api</artifactId>
-                <version>${spigot.api.1_16_R1}</version>
-                <scope>provided</scope>
-            </dependency>
-            
-            <!-- Modern Era API Dependencies (Java 17) -->
-            <dependency>
-                <groupId>io.papermc.paper</groupId>
-                <artifactId>paper-api</artifactId>
-                <version>${paper.api.1_17_R1}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.papermc.paper</groupId>
-                <artifactId>paper-api</artifactId>
-                <version>${paper.api.1_20_R1}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.papermc.paper</groupId>
-                <artifactId>paper-api</artifactId>
-                <version>${paper.api.1_20_R2}</version>
-                <scope>provided</scope>
-            </dependency>
-            
-            <!-- Contemporary Era API Dependencies (Java 21/25) -->
-            <dependency>
-                <groupId>io.papermc.paper</groupId>
-                <artifactId>paper-api</artifactId>
-                <version>${paper.api.1_21_R1}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.papermc.paper</groupId>
-                <artifactId>paper-api</artifactId>
-                <version>${paper.api.26_1_2}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.papermc.paper</groupId>
-                <artifactId>paper-api</artifactId>
-                <version>${paper.api.26_2_0}</version>
-                <scope>provided</scope>
-            </dependency>
-            
             <!-- Version Implementation Modules -->
             <dependency>
                 <groupId>com.example</groupId>
@@ -212,6 +130,16 @@
             <dependency>
                 <groupId>com.example</groupId>
                 <artifactId>weeping-angels-v1_20_R1</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>weeping-angels-v1_20_R2</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>weeping-angels-v1_20_R3</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -348,10 +276,6 @@
             </activation>
             <modules>
                 <module>v1_7_R4</module>
-                <module>v1_8_R1</module>
-                <module>v1_9_R1</module>
-                <module>v1_10_R1</module>
-                <module>v1_11_R1</module>
             </modules>
         </profile>
         
@@ -365,9 +289,6 @@
             </activation>
             <modules>
                 <module>v1_12_R1</module>
-                <module>v1_13_R1</module>
-                <module>v1_14_R1</module>
-                <module>v1_15_R1</module>
                 <module>v1_16_R1</module>
             </modules>
         </profile>
@@ -381,9 +302,6 @@
                 </property>
             </activation>
             <modules>
-                <module>v1_17_R1</module>
-                <module>v1_18_R1</module>
-                <module>v1_19_R1</module>
                 <module>v1_20_R1</module>
                 <module>v1_20_R2</module>
             </modules>

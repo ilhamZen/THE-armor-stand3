@@ -1,8 +1,8 @@
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/api/WeepingAngelAPI.java
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/listener/AngelListener.java
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/manager/SpawnManager.java
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/api/WeepingAngelFactory.java
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/command/AngelCommand.java
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/config/AngelConfig.java
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/manager/AngelManager.java
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/WeepingAngelsPlugin.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/WeepingAngelsPlugin.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/api/WeepingAngelAPI.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/api/WeepingAngelFactory.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/command/AngelCommand.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/config/AngelConfig.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/listener/AngelListener.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/manager/AngelManager.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/manager/SpawnManager.java

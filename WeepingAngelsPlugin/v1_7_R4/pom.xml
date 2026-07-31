@@ -21,6 +21,14 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <repositories>
+        <!-- PaperMC has better legacy Spigot artifact coverage -->
+        <repository>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <!-- Core Abstraction Module -->
         <dependency>
@@ -28,11 +36,11 @@
             <artifactId>weeping-angels-core</artifactId>
         </dependency>
         
-        <!-- Spigot API for 1.7.10 - Legacy Bukkit API -->
+        <!-- Use Spigot API 1.10 as earliest available - compatible with 1.7-1.10 era code -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>${spigot.api.1_7_R4}</version>
+            <version>1.10-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
