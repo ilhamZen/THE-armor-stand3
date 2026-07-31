@@ -16,8 +16,8 @@
     <description>Final shaded JAR with both legacy plugin.yml and modern paper-plugin.yml for universal server compatibility</description>
 
     <properties>
-        <java.version>${java.version.contemporary}</java.version>
-        <maven.compiler.release>21</maven.compiler.release>
+        <java.version>${java.version.modern}</java.version>
+        <maven.compiler.release>17</maven.compiler.release>
     </properties>
 
     <dependencies>
@@ -46,22 +46,18 @@
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>petrified-v1_21_R1</artifactId>
+            <artifactId>petrified-v1_20_R2</artifactId>
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>petrified-v26_1_2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>petrified-v26_2_0</artifactId>
+            <artifactId>petrified-v1_20_R3</artifactId>
         </dependency>
         
         <!-- Paper API for compilation (provided at runtime) -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>${paper.api.26_2_0}</version>
+            <version>${paper.api.1_20_R2}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -83,12 +79,12 @@
         </resources>
         
         <plugins>
-            <!-- Compiler Plugin with Java 21 Toolchain -->
+            <!-- Compiler Plugin with Java 17 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <release>21</release>
+                    <release>17</release>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>

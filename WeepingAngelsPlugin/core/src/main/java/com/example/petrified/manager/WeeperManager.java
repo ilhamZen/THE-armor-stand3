@@ -2,10 +2,12 @@ package com.example.petrified.manager;
 
 import com.example.petrified.api.WeeperAPI;
 import com.example.petrified.config.WeeperConfig;
+import com.example.petrified.listener.WeeperListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.NamespacedKey;
+import org.bukkit.Particle;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Monster;
@@ -32,16 +34,18 @@ public class WeeperManager {
     private final JavaPlugin plugin;
     private final WeeperConfig config;
     private final WeeperAPI api;
+    private final WeeperListener listener;
     private final NamespacedKey weeperKey;
     private final NamespacedKey nameKey;
 
     private final Map<UUID, WeeperState> activeWeepers = new ConcurrentHashMap<>();
     private int aiTaskId = -1;
 
-    public WeeperManager(JavaPlugin plugin, WeeperConfig config, WeeperAPI api) {
+    public WeeperManager(JavaPlugin plugin, WeeperConfig config, WeeperAPI api, WeeperListener listener) {
         this.plugin = plugin;
         this.config = config;
         this.api = api;
+        this.listener = listener;
         this.weeperKey = new NamespacedKey(plugin, "weeper");
         this.nameKey = new NamespacedKey(plugin, "weeper_name");
     }
@@ -233,10 +237,7 @@ public class WeeperManager {
                         // Contact! Trigger Quantum Teleportation Curse
                         if (nearestPlayer != null && !nearestPlayer.isDead()) {
                             // Cancel standard physical damage and trigger curse
-                            WeeperListener listener = getWeeperListener();
-                            if (listener != null) {
-                                listener.triggerQuantumCurse(nearestPlayer, monster);
-                            }
+                            listener.triggerQuantumCurse(nearestPlayer, monster);
                         }
                         // Face the player
                         facePlayer(monster, nearestPlayer);
@@ -273,16 +274,6 @@ public class WeeperManager {
                 }
             }
         }
-    }
-
-    private WeeperListener getWeeperListener() {
-        // Try to get the listener from registered listeners
-        for (org.bukkit.event.Listener listener : plugin.getServer().getPluginManager().getRegisteredListeners()) {
-            if (listener instanceof WeeperListener) {
-                return (WeeperListener) listener;
-            }
-        }
-        return null;
     }
 
     private Player findNearestPlayer(Location location, int radius) {

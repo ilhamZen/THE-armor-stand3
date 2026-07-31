@@ -27,12 +27,23 @@ public class WeeperListener implements Listener {
     private static final Logger LOGGER = Logger.getLogger("Petrified");
     private static final Random RANDOM = new Random();
 
-    private final WeeperManager weeperManager;
+    private WeeperManager weeperManager;
     private final WeeperConfig config;
 
     public WeeperListener(WeeperManager weeperManager, WeeperConfig config) {
         this.weeperManager = weeperManager;
         this.config = config;
+    }
+
+    /**
+     * Sets the WeeperManager reference. Used to break circular dependency during initialization.
+     */
+    public void setManager(WeeperManager weeperManager) {
+        this.weeperManager = weeperManager;
+    }
+
+    public WeeperManager getManager() {
+        return weeperManager;
     }
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
@@ -116,7 +127,7 @@ public class WeeperListener implements Listener {
             // Apply potion distortions: Blindness and Nausea for 100 ticks (5 seconds)
             int duration = config.getPotionEffectDuration();
             player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, duration, 0, false, false));
-            player.addPotionEffect(new PotionEffect(PotionEffectType.NAUSEA, duration, 0, false, false));
+            player.addPotionEffect(new PotionEffect(org.bukkit.potion.PotionEffectType.CONFUSION, duration, 0, false, false));
             
             // Spawn particles at original location
             playerLoc.getWorld().spawnParticle(Particle.PORTAL, playerLoc, 50, 1, 2, 1, 0.5);

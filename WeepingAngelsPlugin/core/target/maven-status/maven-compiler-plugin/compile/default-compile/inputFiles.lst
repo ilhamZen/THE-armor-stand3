@@ -1,7 +1,6 @@
-/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/api/WeepingAngelAPI.java
-/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/api/WeepingAngelFactory.java
-/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/command/AngelCommand.java
-/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/config/AngelConfig.java
-/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/listener/AngelListener.java
-/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/manager/AngelManager.java
-/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/manager/SpawnManager.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/petrified/api/WeeperAPI.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/petrified/api/WeeperFactory.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/petrified/command/WeeperCommand.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/petrified/config/WeeperConfig.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/petrified/listener/WeeperListener.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/petrified/manager/WeeperManager.java

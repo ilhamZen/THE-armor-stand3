@@ -16,8 +16,8 @@
     <description>NMS implementation module for Paper 1.20.5+ - First Data Components API era (Java 21)</description>
 
     <properties>
-        <java.version>${java.version.contemporary}</java.version>
-        <maven.compiler.release>21</maven.compiler.release>
+        <java.version>${java.version.modern}</java.version>
+        <maven.compiler.release>17</maven.compiler.release>
     </properties>
 
     <dependencies>
@@ -27,23 +27,23 @@
             <artifactId>petrified-core</artifactId>
         </dependency>
         
-        <!-- Paper API for 1.20.6 - Contemporary Era with Data Components -->
+        <!-- Paper API for 1.20.4 - Last pre-Data Components era (Java 17) -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>${paper.api.1_20_R3}</version>
+            <version>${paper.api.1_20_R2}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Compiler Plugin with Java 21 Toolchain -->
+            <!-- Compiler Plugin with Java 17 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <release>21</release>
+                    <release>17</release>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>

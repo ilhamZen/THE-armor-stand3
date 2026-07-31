@@ -39,11 +39,16 @@ public class PetrifiedPlugin extends JavaPlugin {
         // Initialize configuration
         config = new WeeperConfig(this);
 
-        // Initialize manager
-        manager = new WeeperManager(this, config, api);
+        // Pass null initially to break the circular dependency loop
+        listener = new WeeperListener(null, config);
 
-        // Initialize and register listener
-        listener = new WeeperListener(manager, config);
+        // Construct the manager with the ready listener instance
+        manager = new WeeperManager(this, config, api, listener);
+
+        // Inject the newly constructed manager back into the listener
+        listener.setManager(manager);
+
+        // Register listener after manager is fully initialized
         getServer().getPluginManager().registerEvents(listener, this);
 
         // Register commands
