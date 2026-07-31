@@ -1,48 +1,10 @@
-```
-# Compiled and build artifacts
-*.class
-*.o
-*.obj
-*.out
-build/
-target/
+# Web artifacts
+*.html.swp
+*.tmp
 
-# Dependencies
-lib/
-libs/
-dependency-reduced-pom.xml
-
-# Logs and temp files
-*.log
+# General temp files
 *.tmp
 *.swp
 
-# Environment
-.env
-.env.local
-*.env.*
-
-# Editors
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# System files
-.DS_Store
-Thumbs.db
-
-# Coverage
-coverage/
-htmlcov/
-.coverage
-
-# Gradle
-.gradle/
-!gradle/wrapper/gradle-wrapper.jar
-
-# Maven
-**/target/
-!**/target/classes/**
-!**/target/test-classes/**
-```
+# Logs
+*.log
