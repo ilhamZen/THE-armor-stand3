@@ -56,21 +56,16 @@
         <module>core</module>
         
         <!-- Legacy Era Modules (1.7 - 1.11) - Java 8 -->
-        <module>v1_7_R4</module>
+        <module>v1_7</module>
+        <module>v1_8</module>
         
         <!-- Classic Era Modules (1.12 - 1.16) - Java 11/16 -->
-        <module>v1_12_R1</module>
-        <module>v1_16_R1</module>
+        <module>v1_12</module>
+        <module>v1_16</module>
         
         <!-- Modern Era Modules (1.17 - 1.20.4) - Java 17 -->
+        <module>v1_17</module>
         <module>v1_20_R1</module>
-        <module>v1_20_R2</module>
-        
-        <!-- Contemporary Era Modules (1.20.5 - 26.2+) - Java 21/25 -->
-        <module>v1_20_R3</module>
-        <module>v1_21_R1</module>
-        <module>v26_1_2</module>
-        <module>v26_2_0</module>
         
         <!-- Final Plugin Module -->
         <module>plugin</module>
@@ -93,12 +88,22 @@
         <repository>
             <id>sonatype-snapshots</id>
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
         </repository>
         
         <!-- CodeMC (Alternative Spigot/Paper mirror) -->
         <repository>
             <id>codemc-repo</id>
             <url>https://repo.codemc.io/repository/maven-public/</url>
+        </repository>
+        
+        <!-- Minecraft Libraries Repo (for very old versions) -->
+        <repository>
+            <id>minecraft-libraries</id>
+            <url>https://libraries.minecraft.net/</url>
         </repository>
     </repositories>
 
@@ -114,47 +119,32 @@
             <!-- Version Implementation Modules -->
             <dependency>
                 <groupId>com.example</groupId>
-                <artifactId>petrified-v1_7_R4</artifactId>
+                <artifactId>petrified-v1_7</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.example</groupId>
-                <artifactId>petrified-v1_12_R1</artifactId>
+                <artifactId>petrified-v1_8</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.example</groupId>
-                <artifactId>petrified-v1_16_R1</artifactId>
+                <artifactId>petrified-v1_12</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>petrified-v1_16</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>petrified-v1_17</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.example</groupId>
                 <artifactId>petrified-v1_20_R1</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.example</groupId>
-                <artifactId>petrified-v1_20_R2</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.example</groupId>
-                <artifactId>petrified-v1_20_R3</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.example</groupId>
-                <artifactId>petrified-v1_21_R1</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.example</groupId>
-                <artifactId>petrified-v26_1_2</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.example</groupId>
-                <artifactId>petrified-v26_2_0</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

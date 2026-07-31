@@ -30,34 +30,34 @@
         <!-- Version Implementation Modules - All compiled into final JAR -->
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>petrified-v1_7_R4</artifactId>
+            <artifactId>petrified-v1_7</artifactId>
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>petrified-v1_12_R1</artifactId>
+            <artifactId>petrified-v1_8</artifactId>
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>petrified-v1_16_R1</artifactId>
+            <artifactId>petrified-v1_12</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>petrified-v1_16</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>petrified-v1_17</artifactId>
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>petrified-v1_20_R1</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>petrified-v1_20_R2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>petrified-v1_20_R3</artifactId>
         </dependency>
         
         <!-- Paper API for compilation (provided at runtime) -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>${paper.api.1_20_R2}</version>
+            <version>${paper.api.1_20_R1}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
