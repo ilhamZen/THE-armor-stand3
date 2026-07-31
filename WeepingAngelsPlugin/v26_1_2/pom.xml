@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>weeping-angels-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>weeping-angels-v26_1_2</artifactId>
+    <packaging>jar</packaging>
+    <name>WeepingAngels v26_1_2 (PurpurMC 1.21.1)</name>
+    <description>NMS implementation module for PurpurMC 26.1.2 (Minecraft 1.21.1)</description>
+
+    <dependencies>
+        <!-- Core module dependency -->
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>weeping-angels-core</artifactId>
+        </dependency>
+        
+        <!-- Paper API (compatible with PurpurMC 26.1.2) -->
+        <dependency>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>${paper.api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
