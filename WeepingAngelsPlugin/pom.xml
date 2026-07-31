@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://apache.org"
-         xmlns:xsi="http://w3.org"
-         xsi:schemaLocation="http://apache.org http://apache.org">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
@@ -10,44 +10,203 @@
     <packaging>pom</packaging>
 
     <name>WeepingAngels Parent</name>
-    <description>Weeping Angel armor stands with quantum locking, pathfinding, clustered spawning, and pickaxe-only three-hit kill.</description>
+    <description>Weeping Angel armor stands with quantum locking, pathfinding, clustered spawning, and pickaxe-only three-hit kill. Universal cross-version support from Minecraft 1.7 to 26.2+.</description>
 
     <properties>
-        <java.version>17</java.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <!-- Diperbarui menggunakan versi Paper / Purpur 26.1.2 -->
-        <paper.api.version>26.1.2</paper.api.version>
+        
+        <!-- Global Version Properties for All Minecraft Generations -->
+        <!-- Legacy Era (1.7 - 1.11) - Java 8 -->
+        <spigot.api.1_7_R4>1.7.10-R0.1-SNAPSHOT</spigot.api.1_7_R4>
+        <spigot.api.1_8_R1>1.8.8-R0.1-SNAPSHOT</spigot.api.1_8_R1>
+        <spigot.api.1_9_R1>1.9.4-R0.1-SNAPSHOT</spigot.api.1_9_R1>
+        <spigot.api.1_10_R1>1.10.2-R0.1-SNAPSHOT</spigot.api.1_10_R1>
+        <spigot.api.1_11_R1>1.11.2-R0.1-SNAPSHOT</spigot.api.1_11_R1>
+        
+        <!-- Classic Era (1.12 - 1.16) - Java 11/16 -->
+        <spigot.api.1_12_R1>1.12.2-R0.1-SNAPSHOT</spigot.api.1_12_R1>
+        <spigot.api.1_13_R1>1.13.2-R0.1-SNAPSHOT</spigot.api.1_13_R1>
+        <spigot.api.1_14_R1>1.14.4-R0.1-SNAPSHOT</spigot.api.1_14_R1>
+        <spigot.api.1_15_R1>1.15.2-R0.1-SNAPSHOT</spigot.api.1_15_R1>
+        <spigot.api.1_16_R1>1.16.5-R0.1-SNAPSHOT</spigot.api.1_16_R1>
+        
+        <!-- Modern Era (1.17 - 1.20.4) - Java 17 -->
+        <paper.api.1_17_R1>1.17.1-426</paper.api.1_17_R1>
+        <paper.api.1_18_R1>1.18.2-391</paper.api.1_18_R1>
+        <paper.api.1_19_R1>1.19.4-511</paper.api.1_19_R1>
+        <paper.api.1_20_R1>1.20.1-196</paper.api.1_20_R1>
+        <paper.api.1_20_R2>1.20.4-456</paper.api.1_20_R2>
+        
+        <!-- Contemporary Era (1.20.5 - 26.2+) - Java 21/25 -->
+        <paper.api.1_20_R3>1.20.6-115</paper.api.1_20_R3>
+        <paper.api.1_21_R1>1.21.1-112</paper.api.1_21_R1>
+        <paper.api.26_1_2>26.1.2</paper.api.26_1_2>
+        <paper.api.26_2_0>26.2.0</paper.api.26_2_0>
+        
+        <!-- Plugin Version Target (Latest) -->
+        <paper.api.version>${paper.api.26_2_0}</paper.api.version>
+        
+        <!-- Compiler Plugin Versions -->
+        <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
+        <maven.shade.plugin.version>3.6.2</maven.shade.plugin.version>
+        <maven.jar.plugin.version>3.4.2</maven.jar.plugin.version>
+        <maven.resources.plugin.version>3.3.1</maven.resources.plugin.version>
+        
+        <!-- Java Toolchain Versions per Era -->
+        <java.version.legacy>8</java.version.legacy>
+        <java.version.classic>11</java.version.classic>
+        <java.version.modern>17</java.version.modern>
+        <java.version.contemporary>21</java.version.contemporary>
+        <java.version.latest>25</java.version.latest>
     </properties>
 
     <modules>
+        <!-- Core Abstraction Module -->
         <module>core</module>
+        
+        <!-- Legacy Era Modules (1.7 - 1.11) - Java 8 -->
+        <module>v1_7_R4</module>
+        <module>v1_8_R1</module>
+        <module>v1_9_R1</module>
+        <module>v1_10_R1</module>
+        <module>v1_11_R1</module>
+        
+        <!-- Classic Era Modules (1.12 - 1.16) - Java 11/16 -->
+        <module>v1_12_R1</module>
+        <module>v1_13_R1</module>
+        <module>v1_14_R1</module>
+        <module>v1_15_R1</module>
+        <module>v1_16_R1</module>
+        
+        <!-- Modern Era Modules (1.17 - 1.20.4) - Java 17 -->
+        <module>v1_17_R1</module>
+        <module>v1_18_R1</module>
+        <module>v1_19_R1</module>
         <module>v1_20_R1</module>
+        <module>v1_20_R2</module>
+        
+        <!-- Contemporary Era Modules (1.20.5 - 26.2+) - Java 21/25 -->
+        <module>v1_20_R3</module>
         <module>v1_21_R1</module>
         <module>v26_1_2</module>
+        <module>v26_2_0</module>
+        
+        <!-- Final Plugin Module -->
         <module>plugin</module>
     </modules>
 
     <repositories>
+        <!-- SpigotMC Repository (Legacy & Classic Era) -->
+        <repository>
+            <id>spigotmc-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        
+        <!-- PaperMC Repository (Modern & Contemporary Era) -->
         <repository>
             <id>papermc</id>
-            <url>https://papermc.io</url>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
+        </repository>
+        
+        <!-- Sonatype Snapshots (For bleeding-edge builds) -->
+        <repository>
+            <id>sonatype-snapshots</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+        
+        <!-- CodeMC (Alternative Spigot/Paper mirror) -->
+        <repository>
+            <id>codemc-repo</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
         </repository>
     </repositories>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>io.papermc.paper</groupId>
-                <artifactId>paper-api</artifactId>
-                <version>${paper.api.version}</version>
-                <scope>provided</scope>
-            </dependency>
+            <!-- Internal Module Dependencies -->
             <dependency>
                 <groupId>com.example</groupId>
                 <artifactId>weeping-angels-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            
+            <!-- Legacy Era API Dependencies (Java 8) -->
+            <dependency>
+                <groupId>org.spigotmc</groupId>
+                <artifactId>spigot-api</artifactId>
+                <version>${spigot.api.1_7_R4}</version>
+                <scope>provided</scope>
+            </dependency>
+            
+            <!-- Classic Era API Dependencies (Java 11/16) -->
+            <dependency>
+                <groupId>org.spigotmc</groupId>
+                <artifactId>spigot-api</artifactId>
+                <version>${spigot.api.1_12_R1}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.spigotmc</groupId>
+                <artifactId>spigot-api</artifactId>
+                <version>${spigot.api.1_16_R1}</version>
+                <scope>provided</scope>
+            </dependency>
+            
+            <!-- Modern Era API Dependencies (Java 17) -->
+            <dependency>
+                <groupId>io.papermc.paper</groupId>
+                <artifactId>paper-api</artifactId>
+                <version>${paper.api.1_17_R1}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.papermc.paper</groupId>
+                <artifactId>paper-api</artifactId>
+                <version>${paper.api.1_20_R1}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.papermc.paper</groupId>
+                <artifactId>paper-api</artifactId>
+                <version>${paper.api.1_20_R2}</version>
+                <scope>provided</scope>
+            </dependency>
+            
+            <!-- Contemporary Era API Dependencies (Java 21/25) -->
+            <dependency>
+                <groupId>io.papermc.paper</groupId>
+                <artifactId>paper-api</artifactId>
+                <version>${paper.api.1_21_R1}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.papermc.paper</groupId>
+                <artifactId>paper-api</artifactId>
+                <version>${paper.api.26_1_2}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.papermc.paper</groupId>
+                <artifactId>paper-api</artifactId>
+                <version>${paper.api.26_2_0}</version>
+                <scope>provided</scope>
+            </dependency>
+            
+            <!-- Version Implementation Modules -->
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>weeping-angels-v1_7_R4</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>weeping-angels-v1_12_R1</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>weeping-angels-v1_16_R1</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -65,28 +224,185 @@
                 <artifactId>weeping-angels-v26_1_2</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>weeping-angels-v26_2_0</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <build>
+        <defaultGoal>clean package</defaultGoal>
+        
         <pluginManagement>
             <plugins>
+                <!-- Maven Compiler Plugin with Toolchain Support -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.11.0</version>
+                    <version>${maven.compiler.plugin.version}</version>
                     <configuration>
-                        <source>17</source>
-                        <target>17</target>
-                        <encoding>UTF-8</encoding>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <showDeprecation>true</showDeprecation>
+                        <showWarnings>true</showWarnings>
                     </configuration>
                 </plugin>
+                
+                <!-- Maven Shade Plugin for Fat JAR Creation -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-shade-plugin</artifactId>
-                    <version>3.5.1</version>
+                    <version>${maven.shade.plugin.version}</version>
+                    <configuration>
+                        <createDependencyReducedPom>false</createDependencyReducedPom>
+                        <minimizeJar>false</minimizeJar>
+                        <shadedArtifactAttached>false</shadedArtifactAttached>
+                        <filters>
+                            <filter>
+                                <artifact>*:*</artifact>
+                                <excludes>
+                                    <exclude>META-INF/MANIFEST.MF</exclude>
+                                    <exclude>META-INF/*.SF</exclude>
+                                    <exclude>META-INF/*.DSA</exclude>
+                                    <exclude>META-INF/*.RSA</exclude>
+                                    <exclude>**/module-info.class</exclude>
+                                </excludes>
+                            </filter>
+                        </filters>
+                        <relocations>
+                            <!-- Prevent classloader conflicts by relocating any shaded libs -->
+                        </relocations>
+                    </configuration>
+                </plugin>
+                
+                <!-- Maven JAR Plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven.jar.plugin.version}</version>
+                </plugin>
+                
+                <!-- Maven Resources Plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven.resources.plugin.version}</version>
+                    <configuration>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                
+                <!-- Maven Toolchains Plugin (for multi-Java compilation) -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-toolchains-plugin</artifactId>
+                    <version>3.2.0</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>toolchain</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <toolchains>
+                            <jdk>
+                                <version>${java.version}</version>
+                            </jdk>
+                        </toolchains>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
+        
+        <plugins>
+            <!-- Default compiler configuration for parent -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <release>${java.version.modern}</release>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+        
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
+
+    <profiles>
+        <!-- Profile for building only specific era modules -->
+        <profile>
+            <id>legacy-era</id>
+            <activation>
+                <property>
+                    <name>era</name>
+                    <value>legacy</value>
+                </property>
+            </activation>
+            <modules>
+                <module>v1_7_R4</module>
+                <module>v1_8_R1</module>
+                <module>v1_9_R1</module>
+                <module>v1_10_R1</module>
+                <module>v1_11_R1</module>
+            </modules>
+        </profile>
+        
+        <profile>
+            <id>classic-era</id>
+            <activation>
+                <property>
+                    <name>era</name>
+                    <value>classic</value>
+                </property>
+            </activation>
+            <modules>
+                <module>v1_12_R1</module>
+                <module>v1_13_R1</module>
+                <module>v1_14_R1</module>
+                <module>v1_15_R1</module>
+                <module>v1_16_R1</module>
+            </modules>
+        </profile>
+        
+        <profile>
+            <id>modern-era</id>
+            <activation>
+                <property>
+                    <name>era</name>
+                    <value>modern</value>
+                </property>
+            </activation>
+            <modules>
+                <module>v1_17_R1</module>
+                <module>v1_18_R1</module>
+                <module>v1_19_R1</module>
+                <module>v1_20_R1</module>
+                <module>v1_20_R2</module>
+            </modules>
+        </profile>
+        
+        <profile>
+            <id>contemporary-era</id>
+            <activation>
+                <property>
+                    <name>era</name>
+                    <value>contemporary</value>
+                </property>
+            </activation>
+            <modules>
+                <module>v1_20_R3</module>
+                <module>v1_21_R1</module>
+                <module>v26_1_2</module>
+                <module>v26_2_0</module>
+            </modules>
+        </profile>
+    </profiles>
 </project>

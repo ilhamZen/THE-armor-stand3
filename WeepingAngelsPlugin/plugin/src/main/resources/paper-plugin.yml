@@ -1,0 +1,43 @@
+name: WeepingAngels
+version: 1.0.0
+main: com.example.weepingangels.WeepingAngelsBootstrap
+description: Weeping Angel armor stands with quantum locking, pathfinding, clustered spawning, and pickaxe-only three-hit kill. Universal cross-version support from Minecraft 1.7 to 26.2+.
+authors:
+  - Elite Staff Engineer
+website: https://example.com
+
+api-version: '1.20'
+
+# Paper/Purpur 26.x+ specific configuration
+folia-supported: true
+supports-rerouting: true
+
+# Modern loader configuration for Paper 26.x+
+loader: paper
+
+# Commands registered via the modern API
+commands:
+  weepingangel:
+    description: Manage Weeping Angels
+    usage: /weepingangel <spawn|remove|reload>
+    aliases: [wa, weepingangels]
+    permission: weepingangels.admin
+
+# Permissions
+permissions:
+  weepingangels.admin:
+    description: Allows administration of Weeping Angels
+    default: op
+
+# Libraries that should be available at runtime
+libraries:
+  - org.jetbrains:annotations:24.0.0
+
+# Version-specific configurations
+platforms:
+  paper:
+    minimum-version: '26.1.2'
+  purpur:
+    minimum-version: '26.1.2'
+  spigot:
+    minimum-version: '1.20'

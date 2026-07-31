@@ -10,14 +10,14 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>weeping-angels-v1_20_R1</artifactId>
+    <artifactId>weeping-angels-v1_16_R1</artifactId>
     <packaging>jar</packaging>
-    <name>WeepingAngels v1_20_R1 (Modern 1.20.1)</name>
-    <description>NMS implementation module for Paper/Spigot 1.20.1 using Mojang mappings (Java 17)</description>
+    <name>WeepingAngels v1_16_R1 (Classic 1.16.5)</name>
+    <description>NMS implementation module for Spigot/Paper 1.16.5 - Last Java 8 compatible NMS (Java 11/16)</description>
 
     <properties>
-        <java.version>${java.version.modern}</java.version>
-        <maven.compiler.release>17</maven.compiler.release>
+        <java.version>${java.version.classic}</java.version>
+        <maven.compiler.release>11</maven.compiler.release>
     </properties>
 
     <dependencies>
@@ -27,23 +27,23 @@
             <artifactId>weeping-angels-core</artifactId>
         </dependency>
         
-        <!-- Paper API for 1.20.1 - Modern Era with Mojang Mappings -->
+        <!-- Spigot API for 1.16.5 - Classic Era with Adventure API introduction -->
         <dependency>
-            <groupId>io.papermc.paper</groupId>
-            <artifactId>paper-api</artifactId>
-            <version>${paper.api.1_20_R1}</version>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>${spigot.api.1_16_R1}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Compiler Plugin with Java 17 Toolchain -->
+            <!-- Compiler Plugin with Java 11 Toolchain -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <release>17</release>
+                    <release>11</release>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>

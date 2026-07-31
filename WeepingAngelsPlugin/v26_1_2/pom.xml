@@ -12,30 +12,40 @@
 
     <artifactId>weeping-angels-v26_1_2</artifactId>
     <packaging>jar</packaging>
-    <name>WeepingAngels v26_1_2 (PurpurMC 1.21.1)</name>
-    <description>NMS implementation module for PurpurMC 26.1.2 (Minecraft 1.21.1)</description>
+    <name>WeepingAngels v26_1_2 (PurpurMC 26.1.2)</name>
+    <description>NMS implementation module for PurpurMC/PaperMC 26.1.2+ (Minecraft 1.21.1) with Data Components API (Java 21)</description>
+
+    <properties>
+        <java.version>${java.version.contemporary}</java.version>
+        <maven.compiler.release>21</maven.compiler.release>
+    </properties>
 
     <dependencies>
-        <!-- Core module dependency -->
+        <!-- Core Abstraction Module -->
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>weeping-angels-core</artifactId>
         </dependency>
         
-        <!-- Paper API (compatible with PurpurMC 26.1.2) -->
+        <!-- Paper API for 26.1.2 - Contemporary Era with Data Components -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>${paper.api.version}</version>
+            <version>${paper.api.26_1_2}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            <!-- Compiler Plugin with Java 21 Toolchain -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <release>21</release>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
             </plugin>
         </plugins>
     </build>

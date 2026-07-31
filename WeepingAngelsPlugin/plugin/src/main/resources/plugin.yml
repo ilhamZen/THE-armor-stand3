@@ -3,6 +3,9 @@ main: com.example.weepingangels.WeepingAngelsPlugin
 api-version: '1.20'
 version: 1.0.0
 description: Weeping Angel armor stands with quantum locking, pathfinding, clustered spawning, and pickaxe-only three-hit kill.
+authors:
+  - Elite Staff Engineer
+website: https://example.com
 commands:
   weepingangel:
     description: Manage Weeping Angels
@@ -13,3 +16,6 @@ permissions:
   weepingangels.admin:
     description: Allows administration of Weeping Angels
     default: op
+libraries:
+  - org.jetbrains:annotations:24.0.0
+folia-supported: true

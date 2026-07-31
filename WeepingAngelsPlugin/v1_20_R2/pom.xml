@@ -10,10 +10,10 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>weeping-angels-v1_20_R1</artifactId>
+    <artifactId>weeping-angels-v1_20_R2</artifactId>
     <packaging>jar</packaging>
-    <name>WeepingAngels v1_20_R1 (Modern 1.20.1)</name>
-    <description>NMS implementation module for Paper/Spigot 1.20.1 using Mojang mappings (Java 17)</description>
+    <name>WeepingAngels v1_20_R2 (Modern 1.20.4)</name>
+    <description>NMS implementation module for Paper/Spigot 1.20.4 - Last pre-Data Components era (Java 17)</description>
 
     <properties>
         <java.version>${java.version.modern}</java.version>
@@ -27,11 +27,11 @@
             <artifactId>weeping-angels-core</artifactId>
         </dependency>
         
-        <!-- Paper API for 1.20.1 - Modern Era with Mojang Mappings -->
+        <!-- Paper API for 1.20.4 - Modern Era with Mojang Mappings -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>${paper.api.1_20_R1}</version>
+            <version>${paper.api.1_20_R2}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

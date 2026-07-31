@@ -3,11 +3,9 @@
 *.class
 *.o
 *.obj
-*.exe
-*.dll
-*.so
-*.a
 *.out
+target/
+build/
 
 # Dependencies
 node_modules/
@@ -16,7 +14,6 @@ venv/
 __pycache__/
 .mypy_cache/
 .pytest_cache/
-target/
 .gradle/
 
 # Logs and temp files
@@ -33,7 +30,7 @@ target/
 .vscode/
 .idea/
 
-# Build directories
-build/
-dist/
+# OS specific
+.DS_Store
+Thumbs.db
 ```
