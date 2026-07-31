@@ -1,21 +1,30 @@
-name: WeepingAngels
-main: com.example.weepingangels.WeepingAngelsPlugin
-api-version: '1.20'
-version: 1.0.0
-description: Weeping Angel armor stands with quantum locking, pathfinding, clustered spawning, and pickaxe-only three-hit kill.
-authors:
-  - Elite Staff Engineer
-website: https://example.com
+name: Petrified
+version: '1.0.0'
+main: com.example.petrified.plugin.PetrifiedPlugin
+api-version: '1.21'
+description: Weeper monsters with quantum locking, aggressive pathfinding, and teleportation curse.
+author: Nyx
+website: https://github.com/example/Petrified
+
 commands:
-  weepingangel:
-    description: Manage Weeping Angels
-    usage: /weepingangel <spawn|remove|reload>
-    aliases: [wa, weepingangels]
-    permission: weepingangels.admin
+  weeperspawn:
+    description: Spawn Weeper monsters
+    usage: /weeperspawn [count]
+    permission: petrified.admin
+  weepersremove:
+    description: Remove Weeper monsters
+    usage: /weepersremove [all|world]
+    permission: petrified.admin
+  weeperslist:
+    description: List active Weepers
+    usage: /weeperslist
+    permission: petrified.admin
+  weepersreload:
+    description: Reload configuration
+    usage: /weepersreload
+    permission: petrified.admin
+
 permissions:
-  weepingangels.admin:
-    description: Allows administration of Weeping Angels
+  petrified.admin:
+    description: Allows access to all Petrified commands
     default: op
-libraries:
-  - org.jetbrains:annotations:24.0.0
-folia-supported: true

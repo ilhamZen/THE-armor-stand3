@@ -6,13 +6,13 @@
 
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>weeping-angels-parent</artifactId>
+        <artifactId>petrified-parent</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>weeping-angels-v1_20_R3</artifactId>
+    <artifactId>petrified-v1_20_R3</artifactId>
     <packaging>jar</packaging>
-    <name>WeepingAngels v1_20_R3 (Contemporary 1.20.5-1.20.6)</name>
+    <name>Petrified v1_20_R3 (Contemporary 1.20.5-1.20.6)</name>
     <description>NMS implementation module for Paper 1.20.5+ - First Data Components API era (Java 21)</description>
 
     <properties>
@@ -24,7 +24,7 @@
         <!-- Core Abstraction Module -->
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>weeping-angels-core</artifactId>
+            <artifactId>petrified-core</artifactId>
         </dependency>
         
         <!-- Paper API for 1.20.6 - Contemporary Era with Data Components -->

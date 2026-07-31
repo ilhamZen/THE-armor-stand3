@@ -6,13 +6,13 @@
 
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>weeping-angels-parent</artifactId>
+        <artifactId>petrified-parent</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>weeping-angels-plugin</artifactId>
+    <artifactId>petrified-plugin</artifactId>
     <packaging>jar</packaging>
-    <name>WeepingAngels Plugin (Universal)</name>
+    <name>Petrified Plugin (Universal)</name>
     <description>Final shaded JAR with both legacy plugin.yml and modern paper-plugin.yml for universal server compatibility</description>
 
     <properties>
@@ -24,37 +24,37 @@
         <!-- Core Abstraction Module -->
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>weeping-angels-core</artifactId>
+            <artifactId>petrified-core</artifactId>
         </dependency>
         
         <!-- Version Implementation Modules - All compiled into final JAR -->
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>weeping-angels-v1_7_R4</artifactId>
+            <artifactId>petrified-v1_7_R4</artifactId>
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>weeping-angels-v1_12_R1</artifactId>
+            <artifactId>petrified-v1_12_R1</artifactId>
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>weeping-angels-v1_16_R1</artifactId>
+            <artifactId>petrified-v1_16_R1</artifactId>
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>weeping-angels-v1_20_R1</artifactId>
+            <artifactId>petrified-v1_20_R1</artifactId>
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>weeping-angels-v1_21_R1</artifactId>
+            <artifactId>petrified-v1_21_R1</artifactId>
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>weeping-angels-v26_1_2</artifactId>
+            <artifactId>petrified-v26_1_2</artifactId>
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>weeping-angels-v26_2_0</artifactId>
+            <artifactId>petrified-v26_2_0</artifactId>
         </dependency>
         
         <!-- Paper API for compilation (provided at runtime) -->
@@ -67,7 +67,7 @@
     </dependencies>
 
     <build>
-        <finalName>WeepingAngels-${project.version}-universal</finalName>
+        <finalName>Petrified-${project.version}-universal</finalName>
         <defaultGoal>clean package</defaultGoal>
         
         <resources>

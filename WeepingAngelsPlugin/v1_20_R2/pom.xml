@@ -6,13 +6,13 @@
 
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>weeping-angels-parent</artifactId>
+        <artifactId>petrified-parent</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>weeping-angels-v1_20_R2</artifactId>
+    <artifactId>petrified-v1_20_R2</artifactId>
     <packaging>jar</packaging>
-    <name>WeepingAngels v1_20_R2 (Modern 1.20.4)</name>
+    <name>Petrified v1_20_R2 (Modern 1.20.4)</name>
     <description>NMS implementation module for Paper/Spigot 1.20.4 - Last pre-Data Components era (Java 17)</description>
 
     <properties>
@@ -24,7 +24,7 @@
         <!-- Core Abstraction Module -->
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>weeping-angels-core</artifactId>
+            <artifactId>petrified-core</artifactId>
         </dependency>
         
         <!-- Paper API for 1.20.4 - Modern Era with Mojang Mappings -->

@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>weeping-angels-parent</artifactId>
+    <artifactId>petrified-parent</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
-    <name>WeepingAngels Parent</name>
-    <description>Weeping Angel armor stands with quantum locking, pathfinding, clustered spawning, and pickaxe-only three-hit kill. Universal cross-version support from Minecraft 1.7 to 26.2+.</description>
+    <name>Petrified Parent</name>
+    <description>Weeper armor stands with quantum locking, pathfinding, clustered spawning, and pickaxe-only three-hit kill. Universal cross-version support from Minecraft 1.7 to 26.2+.</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -107,54 +107,54 @@
             <!-- Internal Module Dependencies -->
             <dependency>
                 <groupId>com.example</groupId>
-                <artifactId>weeping-angels-core</artifactId>
+                <artifactId>petrified-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
             
             <!-- Version Implementation Modules -->
             <dependency>
                 <groupId>com.example</groupId>
-                <artifactId>weeping-angels-v1_7_R4</artifactId>
+                <artifactId>petrified-v1_7_R4</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.example</groupId>
-                <artifactId>weeping-angels-v1_12_R1</artifactId>
+                <artifactId>petrified-v1_12_R1</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.example</groupId>
-                <artifactId>weeping-angels-v1_16_R1</artifactId>
+                <artifactId>petrified-v1_16_R1</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.example</groupId>
-                <artifactId>weeping-angels-v1_20_R1</artifactId>
+                <artifactId>petrified-v1_20_R1</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.example</groupId>
-                <artifactId>weeping-angels-v1_20_R2</artifactId>
+                <artifactId>petrified-v1_20_R2</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.example</groupId>
-                <artifactId>weeping-angels-v1_20_R3</artifactId>
+                <artifactId>petrified-v1_20_R3</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.example</groupId>
-                <artifactId>weeping-angels-v1_21_R1</artifactId>
+                <artifactId>petrified-v1_21_R1</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.example</groupId>
-                <artifactId>weeping-angels-v26_1_2</artifactId>
+                <artifactId>petrified-v26_1_2</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.example</groupId>
-                <artifactId>weeping-angels-v26_2_0</artifactId>
+                <artifactId>petrified-v26_2_0</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

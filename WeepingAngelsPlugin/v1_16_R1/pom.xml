@@ -6,13 +6,13 @@
 
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>weeping-angels-parent</artifactId>
+        <artifactId>petrified-parent</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>weeping-angels-v1_16_R1</artifactId>
+    <artifactId>petrified-v1_16_R1</artifactId>
     <packaging>jar</packaging>
-    <name>WeepingAngels v1_16_R1 (Classic 1.16.5)</name>
+    <name>Petrified v1_16_R1 (Classic 1.16.5)</name>
     <description>NMS implementation module for Spigot/Paper 1.16.5 - Last Java 8 compatible NMS (Java 11/16)</description>
 
     <properties>
@@ -24,7 +24,7 @@
         <!-- Core Abstraction Module -->
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>weeping-angels-core</artifactId>
+            <artifactId>petrified-core</artifactId>
         </dependency>
         
         <!-- Spigot API for 1.16.5 - Classic Era with Adventure API introduction -->

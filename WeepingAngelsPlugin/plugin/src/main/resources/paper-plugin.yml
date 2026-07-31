@@ -1,6 +1,30 @@
-name: WeepingAngels
+name: Petrified
 version: '1.0.0'
-main: com.example.weepingangels.plugin.WeepingAngelsPlugin
+main: com.example.petrified.plugin.PetrifiedPlugin
 api-version: '1.21'
-description: Weeping Angel armor stands with cross-version modular handling.
+description: Weeper monsters with quantum locking, aggressive pathfinding, and teleportation curse.
 author: Nyx
+website: https://github.com/example/Petrified
+
+commands:
+  weeperspawn:
+    description: Spawn Weeper monsters
+    usage: /weeperspawn [count]
+    permission: petrified.admin
+  weepersremove:
+    description: Remove Weeper monsters
+    usage: /weepersremove [all|world]
+    permission: petrified.admin
+  weeperslist:
+    description: List active Weepers
+    usage: /weeperslist
+    permission: petrified.admin
+  weepersreload:
+    description: Reload configuration
+    usage: /weepersreload
+    permission: petrified.admin
+
+permissions:
+  petrified.admin:
+    description: Allows access to all Petrified commands
+    default: op

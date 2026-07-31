@@ -6,13 +6,13 @@
 
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>weeping-angels-parent</artifactId>
+        <artifactId>petrified-parent</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>weeping-angels-v26_2_0</artifactId>
+    <artifactId>petrified-v26_2_0</artifactId>
     <packaging>jar</packaging>
-    <name>WeepingAngels v26_2_0 (Latest PurpurMC 26.2.0+)</name>
+    <name>Petrified v26_2_0 (Latest PurpurMC 26.2.0+)</name>
     <description>NMS implementation module for PurpurMC/PaperMC 26.2.0+ (Minecraft 1.21.5+) with full Data Components API (Java 21/25)</description>
 
     <properties>
@@ -24,7 +24,7 @@
         <!-- Core Abstraction Module -->
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>weeping-angels-core</artifactId>
+            <artifactId>petrified-core</artifactId>
         </dependency>
         
         <!-- Paper API for 26.2.0+ - Latest Contemporary Era with full Data Components -->
