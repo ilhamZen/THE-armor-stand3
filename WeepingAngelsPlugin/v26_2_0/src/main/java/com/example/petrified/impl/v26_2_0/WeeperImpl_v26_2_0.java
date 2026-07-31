@@ -55,7 +55,7 @@ public class WeeperImpl_v26_2_0 implements WeeperAPI {
     @Override
     public boolean isCompatible() { 
         String version = org.bukkit.Bukkit.getServer().getMinecraftVersion();
-        return version.contains("26.2") || version.contains("26.1") || version.startsWith("1.21"); 
+        return version.contains("26.2") || version.startsWith("1.21"); 
     }
     
     @Override

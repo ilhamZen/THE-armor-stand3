@@ -1,0 +1,4 @@
+{
+  "entity.weeper.scrape": { "category": "hostile", "sounds": [ "petrified:stone_scrape" ] },
+  "entity.weeper.jumpscare": { "category": "hostile", "sounds": [ "petrified:jumpscare_screech" ] }
+}

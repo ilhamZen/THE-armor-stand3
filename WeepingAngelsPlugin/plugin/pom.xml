@@ -76,6 +76,15 @@
                     <include>**/*.properties</include>
                 </includes>
             </resource>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>**/*.yml</exclude>
+                    <exclude>**/*.xml</exclude>
+                    <exclude>**/*.properties</exclude>
+                </excludes>
+            </resource>
         </resources>
         
         <plugins>
