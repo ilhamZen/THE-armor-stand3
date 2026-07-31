@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>petrified-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>petrified-v1_16_R1</artifactId>
+    <packaging>jar</packaging>
+    <name>Petrified v1_16_R1 (Classic 1.16.5)</name>
+    <description>NMS implementation module for Spigot/Paper 1.16.5 - Last Java 8 compatible NMS (Java 11/16)</description>
+
+    <properties>
+        <java.version>${java.version.classic}</java.version>
+        <maven.compiler.release>11</maven.compiler.release>
+    </properties>
+
+    <dependencies>
+        <!-- Core Abstraction Module -->
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>petrified-core</artifactId>
+        </dependency>
+        
+        <!-- Spigot API for 1.16.5 - Classic Era with Adventure API introduction -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>${spigot.api.1_16_R1}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Compiler Plugin with Java 11 Toolchain -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <release>11</release>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

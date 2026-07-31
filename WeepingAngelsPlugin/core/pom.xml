@@ -6,19 +6,20 @@
 
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>weeping-angels-parent</artifactId>
+        <artifactId>petrified-parent</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>weeping-angels-core</artifactId>
+    <artifactId>petrified-core</artifactId>
     <packaging>jar</packaging>
-    <name>WeepingAngels Core</name>
+    <name>Petrified Core</name>
 
     <dependencies>
+        <!-- Use Paper API 1.20.1 as base for core - most compatible modern version -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>${paper.api.1201}</version>
+            <version>${paper.api.1_20_R1}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

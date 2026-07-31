@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>petrified-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>petrified-v1_12_R1</artifactId>
+    <packaging>jar</packaging>
+    <name>Petrified v1_12_R1 (Classic 1.12.2)</name>
+    <description>NMS implementation module for Spigot/Bukkit 1.12.2 (Java 8/11)</description>
+
+    <properties>
+        <java.version>${java.version.classic}</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!-- Core Abstraction Module -->
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>petrified-core</artifactId>
+        </dependency>
+        
+        <!-- Spigot API for 1.12.2 - Classic Era with WorldEdit/FAWE compatibility -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>${spigot.api.1_12_R1}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Compiler Plugin with Java 8 Toolchain for maximum compatibility -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

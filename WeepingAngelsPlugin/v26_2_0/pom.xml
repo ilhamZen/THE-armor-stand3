@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>petrified-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>petrified-v26_2_0</artifactId>
+    <packaging>jar</packaging>
+    <name>Petrified v26_2_0 (Latest PurpurMC 26.2.0+)</name>
+    <description>NMS implementation module for PurpurMC/PaperMC 26.2.0+ (Minecraft 1.21.5+) with full Data Components API (Java 21/25)</description>
+
+    <properties>
+        <java.version>${java.version.latest}</java.version>
+        <maven.compiler.release>21</maven.compiler.release>
+    </properties>
+
+    <dependencies>
+        <!-- Core Abstraction Module -->
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>petrified-core</artifactId>
+        </dependency>
+        
+        <!-- Paper API for 26.2.0+ - Latest Contemporary Era with full Data Components -->
+        <dependency>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>${paper.api.26_2_0}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Compiler Plugin with Java 21 Toolchain (compatible with Java 25) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <release>21</release>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

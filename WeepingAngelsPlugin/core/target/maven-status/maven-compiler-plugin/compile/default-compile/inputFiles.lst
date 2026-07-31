@@ -1,8 +1,6 @@
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/api/WeepingAngelAPI.java
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/listener/AngelListener.java
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/manager/SpawnManager.java
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/api/WeepingAngelFactory.java
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/command/AngelCommand.java
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/config/AngelConfig.java
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/manager/AngelManager.java
-/home/nyx/Documents/vscode/New Folder/WeepingAngelsPlugin/core/src/main/java/com/example/weepingangels/WeepingAngelsPlugin.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/petrified/api/WeeperAPI.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/petrified/api/WeeperFactory.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/petrified/command/WeeperCommand.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/petrified/config/WeeperConfig.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/petrified/listener/WeeperListener.java
+/workspace/WeepingAngelsPlugin/core/src/main/java/com/example/petrified/manager/WeeperManager.java

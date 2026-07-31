@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>petrified-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>petrified-v1_20_R2</artifactId>
+    <packaging>jar</packaging>
+    <name>Petrified v1_20_R2 (Modern 1.20.4)</name>
+    <description>NMS implementation module for Paper/Spigot 1.20.4 - Last pre-Data Components era (Java 17)</description>
+
+    <properties>
+        <java.version>${java.version.modern}</java.version>
+        <maven.compiler.release>17</maven.compiler.release>
+    </properties>
+
+    <dependencies>
+        <!-- Core Abstraction Module -->
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>petrified-core</artifactId>
+        </dependency>
+        
+        <!-- Paper API for 1.20.4 - Modern Era with Mojang Mappings -->
+        <dependency>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>${paper.api.1_20_R2}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Compiler Plugin with Java 17 Toolchain -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <release>17</release>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

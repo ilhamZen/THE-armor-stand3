@@ -6,38 +6,90 @@
 
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>weeping-angels-parent</artifactId>
+        <artifactId>petrified-parent</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>weeping-angels-plugin</artifactId>
+    <artifactId>petrified-plugin</artifactId>
     <packaging>jar</packaging>
-    <name>WeepingAngels Plugin</name>
+    <name>Petrified Plugin (Universal)</name>
+    <description>Final shaded JAR with both legacy plugin.yml and modern paper-plugin.yml for universal server compatibility</description>
+
+    <properties>
+        <java.version>${java.version.modern}</java.version>
+        <maven.compiler.release>17</maven.compiler.release>
+    </properties>
 
     <dependencies>
+        <!-- Core Abstraction Module -->
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>weeping-angels-core</artifactId>
+            <artifactId>petrified-core</artifactId>
+        </dependency>
+        
+        <!-- Version Implementation Modules - All compiled into final JAR -->
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>petrified-v1_7</artifactId>
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>weeping-angels-v1_20_R1</artifactId>
+            <artifactId>petrified-v1_8</artifactId>
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>weeping-angels-v1_21_R1</artifactId>
+            <artifactId>petrified-v1_12</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>petrified-v1_16</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>petrified-v1_17</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>petrified-v1_20_R1</artifactId>
+        </dependency>
+        
+        <!-- Paper API for compilation (provided at runtime) -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>${paper.api.1201}</version>
+            <version>${paper.api.1_20_R1}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>WeepingAngels-${project.version}</finalName>
+        <finalName>Petrified-${project.version}-universal</finalName>
+        <defaultGoal>clean package</defaultGoal>
+        
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*.yml</include>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+        </resources>
+        
         <plugins>
+            <!-- Compiler Plugin with Java 17 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <release>17</release>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            
+            <!-- Maven Shade Plugin for Fat JAR Creation -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -49,14 +101,62 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <minimizeJar>false</minimizeJar>
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
+                            
+                            <!-- Filters to exclude unnecessary metadata -->
                             <filters>
                                 <filter>
                                     <artifact>*:*</artifact>
                                     <excludes>
                                         <exclude>META-INF/MANIFEST.MF</exclude>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                        <exclude>**/module-info.class</exclude>
+                                        <exclude>META-INF/maven/**</exclude>
                                     </excludes>
                                 </filter>
                             </filters>
+                            
+                            <!-- Relocations to prevent classloader conflicts -->
+                            <relocations>
+                                <!-- No external libs to relocate in this setup -->
+                            </relocations>
+                            
+                            <!-- Transform services for proper merging -->
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"/>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer"/>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheNoticeResourceTransformer"/>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <!-- Antrun Plugin to ensure both plugin.yml and paper-plugin.yml are included -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <echo message="Ensuring both plugin.yml and paper-plugin.yml are present..."/>
+                                <copy file="${project.basedir}/src/main/resources/plugin.yml" 
+                                      tofile="${project.build.outputDirectory}/plugin.yml" 
+                                      overwrite="true"/>
+                                <copy file="${project.basedir}/src/main/resources/paper-plugin.yml" 
+                                      tofile="${project.build.outputDirectory}/paper-plugin.yml" 
+                                      overwrite="true"/>
+                            </target>
                         </configuration>
                     </execution>
                 </executions>

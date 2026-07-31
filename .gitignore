@@ -3,21 +3,14 @@
 *.class
 *.o
 *.obj
-*.exe
-*.dll
-*.so
-*.a
 *.out
+build/
+target/
 
 # Dependencies
-node_modules/
-venv/
-.venv/
-__pycache__/
-.mypy_cache/
-.pytest_cache/
-target/
-.gradle/
+lib/
+libs/
+dependency-reduced-pom.xml
 
 # Logs and temp files
 *.log
@@ -32,8 +25,24 @@ target/
 # Editors
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# Build directories
-build/
-dist/
+# System files
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Gradle
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Maven
+**/target/
+!**/target/classes/**
+!**/target/test-classes/**
 ```
