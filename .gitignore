@@ -1,52 +1,48 @@
 ```
-# Dependencies
-target/
-
 # Compiled and build artifacts
 *.class
-*.jar
-*.war
-*.ear
-*.zip
-*.tar
-*.tar.gz
-*.tgz
-*.bz2
-*.xz
-*.7z
-*.rar
-*.zst
-*.lz4
-*.lzh
-*.cab
-*.arj
-*.rpm
-*.deb
-*.Z
-*.lz
-*.lzo
+*.o
+*.obj
+*.out
+build/
+target/
+
+# Dependencies
+lib/
+libs/
+dependency-reduced-pom.xml
 
 # Logs and temp files
 *.log
 *.tmp
 *.swp
-*.swo
-
-# Editors
-.vscode/
-.idea/
 
 # Environment
 .env
 .env.local
 *.env.*
 
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
 # Coverage
 coverage/
 htmlcov/
 .coverage
 
-# System files
-.DS_Store
-Thumbs.db
+# Gradle
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Maven
+**/target/
+!**/target/classes/**
+!**/target/test-classes/**
 ```

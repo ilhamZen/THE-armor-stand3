@@ -70,6 +70,8 @@
         <!-- Final Plugin Module -->
         <module>plugin</module>
     </modules>
+    
+    <!-- Profiles for optional contemporary era modules (require Java 21+) -->
 
     <repositories>
         <!-- SpigotMC Repository (Legacy & Classic Era) -->
@@ -301,12 +303,11 @@
             <id>contemporary-era</id>
             <activation>
                 <property>
-                    <name>era</name>
-                    <value>contemporary</value>
+                    <name>enable-contemporary</name>
+                    <value>true</value>
                 </property>
             </activation>
             <modules>
-                <module>v1_20_R3</module>
                 <module>v1_21_R1</module>
                 <module>v26_1_2</module>
                 <module>v26_2_0</module>
