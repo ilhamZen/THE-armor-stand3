@@ -12,6 +12,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -105,6 +106,9 @@ public class WeeperListener implements Listener {
         Location playerLoc = player.getLocation();
         Location weeperLoc = weeper.getLocation();
         
+        // Play jumpscare screech sound on contact
+        player.playSound(player.getLocation(), "entity.weeper.jumpscare", 1.0f, 1.0f);
+        
         // Calculate random teleport destination (300-500 blocks away)
         int minDist = config.getTeleportMinDistance();
         int maxDist = config.getTeleportMaxDistance();
@@ -173,5 +177,16 @@ public class WeeperListener implements Listener {
         }
         
         return loc; // Return original if no safe spot found
+    }
+
+    /**
+     * Handles player join events to inject the custom resource pack with Weeper sounds.
+     */
+    @EventHandler
+    public void onPlayerJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+        // Force-inject the runtime resource pack so players can hear custom .ogg files
+        String packUrl = "https://github.com/WeepingAngelsPlugin/raw/main/resourcepack.zip";
+        player.setResourcePack(packUrl);
     }
 }

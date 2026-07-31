@@ -223,6 +223,10 @@ public class WeeperManager {
                 if (state.isLocked()) {
                     state.setLocked(false);
                     api.applyPursuitState(monster);
+                    // Play scrape sound when weeper breaks line-of-sight and speeds up
+                    for (Player p : monster.getWorld().getPlayers()) {
+                        p.playSound(monster.getLocation(), "entity.weeper.scrape", 1.0f, 1.0f);
+                    }
                     if (config.isDebug()) {
                         LOGGER.info("[Petrified] Weeper " + uuid + " is now unlocked and pursuing.");
                     }

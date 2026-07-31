@@ -101,4 +101,22 @@ public interface WeeperAPI {
         player.teleport(safeLoc);
         player.setFallDistance(0);
     }
+    
+    /**
+     * Plays the Weeper scrape sound when it breaks line-of-sight and speeds up.
+     */
+    default void playScrapeSound(org.bukkit.entity.Entity entity, Location location) {
+        if (entity instanceof org.bukkit.entity.Player) {
+            ((org.bukkit.entity.Player) entity).playSound(location, "entity.weeper.scrape", 1.0f, 1.0f);
+        }
+    }
+    
+    /**
+     * Plays the jumpscare screech sound on contact curse teleportation.
+     */
+    default void playJumpscareSound(org.bukkit.entity.Entity entity, Location location) {
+        if (entity instanceof org.bukkit.entity.Player) {
+            ((org.bukkit.entity.Player) entity).playSound(location, "entity.weeper.jumpscare", 1.0f, 1.0f);
+        }
+    }
 }
