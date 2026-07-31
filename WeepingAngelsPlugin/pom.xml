@@ -26,6 +26,7 @@
         <module>core</module>
         <module>v1_20_R1</module>
         <module>v1_21_R1</module>
+        <module>v26_1_2</module>
         <module>plugin</module>
     </modules>
 
@@ -57,6 +58,11 @@
             <dependency>
                 <groupId>com.example</groupId>
                 <artifactId>weeping-angels-v1_21_R1</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>weeping-angels-v26_1_2</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
