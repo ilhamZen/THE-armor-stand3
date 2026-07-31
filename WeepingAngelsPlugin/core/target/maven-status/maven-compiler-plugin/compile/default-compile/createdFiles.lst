@@ -1,0 +1,9 @@
+com/example/weepingangels/WeepingAngelsPlugin.class
+com/example/weepingangels/manager/SpawnManager.class
+com/example/weepingangels/manager/AngelManager$AngelState.class
+com/example/weepingangels/config/AngelConfig.class
+com/example/weepingangels/command/AngelCommand.class
+com/example/weepingangels/api/WeepingAngelFactory.class
+com/example/weepingangels/listener/AngelListener.class
+com/example/weepingangels/manager/AngelManager.class
+com/example/weepingangels/api/WeepingAngelAPI.class

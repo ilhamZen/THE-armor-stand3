@@ -1,0 +1,26 @@
+enabled: true
+max-angels: 40
+check-interval-ticks: 10
+detection-radius: 24
+movement-speed: 0.35
+attack-range: 1.75
+require-line-of-sight: true
+natural-spawning:
+  enabled: true
+  attempt-interval-ticks: 200
+  chance-percent: 12
+  min-light-level: 0
+  max-light-level: 7
+  only-near-players: true
+  player-search-radius: 48
+spawning:
+  cramped-free-block-threshold: 14
+  open-free-block-threshold: 22
+  cluster-min: 2
+  cluster-max: 4
+  cluster-radius: 4
+combat:
+  required-pickaxe-hits: 3
+  only-pickaxe-damage: true
+  reset-hits-after-seconds: -1
+debug: false
