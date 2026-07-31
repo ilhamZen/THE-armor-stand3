@@ -1,37 +1,12 @@
 ```
-# Compiled Java classes
-*.class
-
-# Maven build artifacts
+# Dependencies
 target/
-**/target/
 
-# Maven status files
-**/maven-status/
+# Logs and temp files
+*.log
 
-# Generated JAR files
-**/*.jar
-
-# Local environment files
+# Environment
 .env
 .env.local
 *.env.*
-
-# IDE files
-.vscode/
-.idea/
-*.iml
-*.ipr
-*.iws
-
-# System files
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-
-# Temporary files
-*.tmp
-*.temp
 ```

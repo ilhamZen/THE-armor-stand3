@@ -31,7 +31,7 @@
         <!-- Contemporary Era (1.20.5 - 26.2+) - Java 21/25 -->
         <paper.api.1_20_R3>1.20.6-R0.1-20240617.192752-123</paper.api.1_20_R3>
         <paper.api.1_21_R1>1.21-R0.1-20240805.191212-128</paper.api.1_21_R1>
-        <paper.api.26_1_2>26.1.build.30-stable</paper.api.26_1_2>
+        <paper.api.26_1_2>26.1.2.build.74-stable</paper.api.26_1_2>
         <paper.api.26_2_0>26.2.build.83-stable</paper.api.26_2_0>
         
         <!-- Plugin Version Target (Latest) -->
