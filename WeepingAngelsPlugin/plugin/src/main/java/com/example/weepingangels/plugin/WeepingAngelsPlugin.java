@@ -1,4 +1,4 @@
-package com.example.weepingangels;
+package com.example.weepingangels.plugin;
 
 import com.example.weepingangels.api.WeepingAngelAPI;
 import com.example.weepingangels.api.WeepingAngelFactory;
