@@ -1,0 +1,78 @@
+# Petrified Indonesian Language File
+# Pesan untuk plugin Petrified
+
+# Command messages
+commands.help: "&7[&fPetrified&7] &rPerintah tersedia:"
+commands.help.line: "&8- &f/petrified {0} &7- {1}"
+commands.reload: "&aKonfigurasi dimuat ulang!"
+commands.spawn.single: "&aMemunculkan 1 malaikat di lokasi Anda."
+commands.spawn.cluster: "&aMemunculkan {0} malaikat dalam kelompok."
+commands.spawn.max: "&cJumlah maksimum malaikat tercapai ({0})"
+commands.spawn.fail: "&cGagal menemukan lokasi muncul yang valid."
+commands.remove.success: "&aMenghapus {0} malaikat."
+commands.remove.none: "&cTidak ada malaikat di dekat sini."
+commands.info.title: "&7=== Info Malaikat ==="
+commands.info.uuid: "&fUUID: &7{0}"
+commands.info.locked: "&fTerkunci: &7{0}"
+commands.info.hits: "&fJumlah Pukulan: &7{0}/{1}"
+commands.info.pose: "&fPose Saat Ini: &7{0}"
+commands.freeze.success: "&aMalaikat dibekukan."
+commands.freeze.none: "&cTidak ada malaikat yang ditargetkan."
+commands.unfreeze.success: "&aMalaikat dibuka bekunya."
+commands.pose.set: "&aPose diatur ke {0}."
+commands.pose.list: "&fPose tersedia: &7{0}"
+commands.stats.title: "&7=== Statistik Petrified ==="
+commands.stats.total: "&fTotal Malaikat: &7{0}"
+commands.stats.locked: "&fSedang Terkunci: &7{0}"
+commands.stats.killed: "&fMalaikat Terbunuh: &7{0}"
+commands.stats.displaced: "&fPemain Dipindahkan: &7{0}"
+commands.debug.toggle: "&eMode debug {0}."
+commands.givestatue.success: "&aMenerima patung dekoratif."
+commands.tp.success: "&aMenteleportasi malaikat ke lokasi Anda."
+commands.tp.fail: "&cGagal menteleportasi malaikat."
+commands.list.title: "&7=== Malaikat Aktif ({0}) ==="
+commands.list.entry: "&8- &f{0} &7di {1} [{2}]"
+commands.ping: "&fPong!"
+commands.credit: "&7[&fPetrified&7] &roleh &enyx1024"
+commands.no.permission: "&cAnda tidak memiliki izin untuk menggunakan perintah ini."
+commands.player.only: "&cPerintah ini hanya bisa digunakan oleh pemain."
+commands.unknown: "&cPerintah tidak diketahui. Gunakan /petrified help."
+commands.usage: "&cPenggunaan: /petrified {0}"
+
+# Game messages
+game.dread.title: "&c&jangan berkedip"
+game.dread.actionbar: "&8Anda merasa diawasi..."
+game.displace.title: "&4&lANDA DIKIRIM KEMBALI KE WAKTU LALU"
+game.displace.subtitle: "&7Jangan berpaling dari mereka lagi."
+game.mirror.trapped: "&7Malaikat melihat pantulannya dan membeku selamanya!"
+game.attack.pickaxe: "&8*retak*"
+game.death.shatter: "&7Malaikat hancur menjadi pecahan batu!"
+
+# GUI titles
+gui.poseeditor.title: "&8Editor Pose"
+gui.poseeditor.head: "&fPose Kepala"
+gui.poseeditor.body: "&fPose Tubuh"
+gui.poseeditor.leftarm: "&fLengan Kiri"
+gui.poseeditor.rightarm: "&fLengan Kanan"
+gui.info.title: "&8Informasi Malaikat"
+gui.stats.title: "&8Statistik Server"
+gui.confirm.title: "&cKonfirmasi Tindakan"
+gui.confirm.yes: "&aYa, Konfirmasi"
+gui.confirm.no: "&cTidak, Batal"
+
+# Items
+item.statue.name: "&7Patung Dekoratif"
+item.statue.lore:
+  - "&8Malaikat yang terkunci permanen."
+  - "&8Tempatkan sebagai dekorasi."
+item.poseeditor.name: "&fPemilih Pose"
+item.poseeditor.lore:
+  - "&8Klik untuk mengganti pose."
+
+# Effects
+effect.blindness: "&7Penglihatan Anda memudar..."
+effect.nausea: "&7Dunia berputar..."
+effect.slow: "&7Gerakan Anda melambat..."
+
+# Permissions
+permission.denied: "&cIzin ditolak."

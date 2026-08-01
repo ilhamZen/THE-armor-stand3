@@ -1,0 +1,66 @@
+name: Petrified
+version: 1.0.0
+main: com.nyx1024.petrified.plugin.PetrifiedPlugin
+api-version: '1.13'
+description: Petrified stone statues (vanilla ArmorStands) that quantum-lock when observed and hunt when unseen - a vanilla reimagining of the Weeping Angels.
+author: nyx1024
+website: https://github.com/nyx1024/petrified
+
+softdepend: [PlaceholderAPI]
+
+commands:
+  petrified:
+    description: Main command for Petrified plugin
+    usage: /petrified <command> [args]
+    aliases: [pf, petrifiedstatue]
+    permission: petrified.use
+
+permissions:
+  petrified.use:
+    description: Allows use of basic Petrified commands
+    default: true
+  petrified.admin:
+    description: Allows use of admin commands
+    default: op
+  petrified.spawn:
+    description: Allows spawning angels
+    default: op
+  petrified.remove:
+    description: Allows removing angels
+    default: op
+  petrified.reload:
+    description: Allows reloading config
+    default: op
+  petrified.info:
+    description: Allows viewing angel info
+    default: true
+  petrified.freeze:
+    description: Allows freezing angels
+    default: op
+  petrified.unfreeze:
+    description: Allows unfreezing angels
+    default: op
+  petrified.pose:
+    description: Allows setting angel poses
+    default: op
+  petrified.stats:
+    description: Allows viewing stats
+    default: true
+  petrified.debug:
+    description: Allows debug mode
+    default: op
+  petrified.givestatue:
+    description: Allows getting decorative statues
+    default: op
+  petrified.tp:
+    description: Allows teleporting angels
+    default: op
+  petrified.list:
+    description: Allows listing angels
+    default: op
+  petrified.ping:
+    description: Allows ping command
+    default: true
+  petrified.credit:
+    description: Allows credit command
+    default: true

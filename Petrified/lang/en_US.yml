@@ -1,0 +1,78 @@
+# Petrified English Language File
+# Messages for the Petrified plugin
+
+# Command messages
+commands.help: "&7[&fPetrified&7] &rAvailable commands:"
+commands.help.line: "&8- &f/petrified {0} &7- {1}"
+commands.reload: "&aConfig reloaded!"
+commands.spawn.single: "&aSpawned 1 angel at your location."
+commands.spawn.cluster: "&aSpawned {0} angels in a cluster."
+commands.spawn.max: "&cMaximum number of angels reached ({0})"
+commands.spawn.fail: "&cFailed to find valid spawn location."
+commands.remove.success: "&aRemoved {0} angel(s)."
+commands.remove.none: "&cNo angels found nearby."
+commands.info.title: "&7=== Angel Info ==="
+commands.info.uuid: "&fUUID: &7{0}"
+commands.info.locked: "&fLocked: &7{0}"
+commands.info.hits: "&fHit Count: &7{0}/{1}"
+commands.info.pose: "&fCurrent Pose: &7{0}"
+commands.freeze.success: "&aAngel frozen in place."
+commands.freeze.none: "&cNo angel targeted."
+commands.unfreeze.success: "&aAngel unfrozen."
+commands.pose.set: "&aPose set to {0}."
+commands.pose.list: "&fAvailable poses: &7{0}"
+commands.stats.title: "&7=== Petrified Stats ==="
+commands.stats.total: "&fTotal Angels: &7{0}"
+commands.stats.locked: "&fCurrently Locked: &7{0}"
+commands.stats.killed: "&fAngels Killed: &7{0}"
+commands.stats.displaced: "&fPlayers Displaced: &7{0}"
+commands.debug.toggle: "&eDebug mode {0}."
+commands.givestatue.success: "&aReceived decorative statue."
+commands.tp.success: "&aTeleported angel to your location."
+commands.tp.fail: "&cFailed to teleport angel."
+commands.list.title: "&7=== Active Angels ({0}) ==="
+commands.list.entry: "&8- &f{0} &7at {1} [{2}]"
+commands.ping: "&fPong!"
+commands.credit: "&7[&fPetrified&7] &rby &enyx1024"
+commands.no.permission: "&cYou don't have permission to use this command."
+commands.player.only: "&cThis command can only be used by players."
+commands.unknown: "&cUnknown command. Use /petrified help."
+commands.usage: "&cUsage: /petrified {0}"
+
+# Game messages
+game.dread.title: "&c&DON'T BLINK"
+game.dread.actionbar: "&8You feel watched..."
+game.displace.title: "&4&lYOU WERE SENT BACK IN TIME"
+game.displace.subtitle: "&7Don't turn your back on them again."
+game.mirror.trapped: "&7The angel sees its reflection and freezes forever!"
+game.attack.pickaxe: "&8*crack*"
+game.death.shatter: "&7The angel shatters into stone fragments!"
+
+# GUI titles
+gui.poseeditor.title: "&8Pose Editor"
+gui.poseeditor.head: "&fHead Pose"
+gui.poseeditor.body: "&fBody Pose"
+gui.poseeditor.leftarm: "&fLeft Arm"
+gui.poseeditor.rightarm: "&fRight Arm"
+gui.info.title: "&8Angel Information"
+gui.stats.title: "&8Server Statistics"
+gui.confirm.title: "&cConfirm Action"
+gui.confirm.yes: "&aYes, Confirm"
+gui.confirm.no: "&cNo, Cancel"
+
+# Items
+item.statue.name: "&7Decorative Statue"
+item.statue.lore:
+  - "&8A permanently locked angel."
+  - "&8Place it as decoration."
+item.poseeditor.name: "&fPose Selector"
+item.poseeditor.lore:
+  - "&8Click to cycle poses."
+
+# Effects
+effect.blindness: "&7Your vision fades..."
+effect.nausea: "&7The world spins..."
+effect.slow: "&7Your movements slow..."
+
+# Permissions
+permission.denied: "&cPermission denied."
