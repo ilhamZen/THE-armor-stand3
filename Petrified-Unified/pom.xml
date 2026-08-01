@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.nyx1024.petrified</groupId>
+    <artifactId>petrified-unified-parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>Petrified Unified Parent</name>
+    <description>Merged Weeping Angels plugin with quantum locking, pathfinding, and cross-version support from 1.8.8 to 1.21.11+</description>
+
+    <modules>
+        <!-- Core abstraction module -->
+        <module>petrified-core</module>
+        
+        <!-- Legacy Era (1.8.8 - 1.16.5) - Java 8 -->
+        <module>petrified-impl-legacy-1_8</module>
+        <module>petrified-impl-legacy-1_12</module>
+        <module>petrified-impl-legacy-1_16</module>
+        
+        <!-- Modern Era (1.17.1 - 1.20.4) - Java 17 -->
+        <module>petrified-impl-modern-1_20_R1</module>
+        <module>petrified-impl-modern-1_20_R2</module>
+        
+        <!-- Contemporary Era (1.21+) - Java 21 -->
+        <module>petrified-impl-contemporary-1_21_R1</module>
+        
+        <!-- Shade module producing final JAR -->
+        <module>petrified-plugin</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
+        <maven.shade.plugin.version>3.6.2</maven.shade.plugin.version>
+        <maven.jar.plugin.version>3.4.2</maven.jar.plugin.version>
+        <maven.resources.plugin.version>3.3.1</maven.resources.plugin.version>
+        
+        <!-- Default target (overridden by profiles) -->
+        <mc.target>1_21_R1</mc.target>
+        
+        <!-- API Versions -->
+        <spigot.api.1_8>1.8.8-R0.1-SNAPSHOT</spigot.api.1_8>
+        <spigot.api.1_12>1.12.2-R0.1-SNAPSHOT</spigot.api.1_12>
+        <spigot.api.1_16>1.16.5-R0.1-SNAPSHOT</spigot.api.1_16>
+        <paper.api.1_20_R1>1.20.1-R0.1-SNAPSHOT</paper.api.1_20_R1>
+        <paper.api.1_20_R2>1.20.4-R0.1-SNAPSHOT</paper.api.1_20_R2>
+        <paper.api.1_21_R1>1.21.1-R0.1-SNAPSHOT</paper.api.1_21_R1>
+        
+        <!-- Java Versions per Era -->
+        <java.version.legacy>8</java.version.legacy>
+        <java.version.modern>17</java.version.modern>
+        <java.version.contemporary>21</java.version.contemporary>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Internal modules -->
+            <dependency>
+                <groupId>com.nyx1024.petrified</groupId>
+                <artifactId>petrified-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nyx1024.petrified</groupId>
+                <artifactId>petrified-impl-legacy-1_8</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nyx1024.petrified</groupId>
+                <artifactId>petrified-impl-legacy-1_12</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nyx1024.petrified</groupId>
+                <artifactId>petrified-impl-legacy-1_16</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nyx1024.petrified</groupId>
+                <artifactId>petrified-impl-modern-1_20_R1</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nyx1024.petrified</groupId>
+                <artifactId>petrified-impl-modern-1_20_R2</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nyx1024.petrified</groupId>
+                <artifactId>petrified-impl-contemporary-1_21_R1</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            
+            <!-- External dependencies -->
+            <dependency>
+                <groupId>io.papermc</groupId>
+                <artifactId>paper-api</artifactId>
+                <version>${paper.api.1_21_R1}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.spigotmc</groupId>
+                <artifactId>spigot-api</artifactId>
+                <version>${spigot.api.1_16}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains</groupId>
+                <artifactId>annotations</artifactId>
+                <version>24.0.1</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>spigotmc</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>codemc</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                    <configuration>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <showDeprecation>true</showDeprecation>
+                        <showWarnings>true</showWarnings>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>${maven.shade.plugin.version}</version>
+                    <configuration>
+                        <createDependencyReducedPom>false</createDependencyReducedPom>
+                        <minimizeJar>false</minimizeJar>
+                        <shadedArtifactAttached>false</shadedArtifactAttached>
+                        <filters>
+                            <filter>
+                                <artifact>*:*</artifact>
+                                <excludes>
+                                    <exclude>META-INF/MANIFEST.MF</exclude>
+                                    <exclude>META-INF/*.SF</exclude>
+                                    <exclude>META-INF/*.DSA</exclude>
+                                    <exclude>META-INF/*.RSA</exclude>
+                                    <exclude>**/module-info.class</exclude>
+                                </excludes>
+                            </filter>
+                        </filters>
+                        <relocations>
+                            <relocation>
+                                <pattern>org.bstats</pattern>
+                                <shadedPattern>com.nyx1024.petrified.lib.bstats</shadedPattern>
+                            </relocation>
+                        </relocations>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven.jar.plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven.resources.plugin.version}</version>
+                    <configuration>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <profiles>
+        <!-- Legacy 1.8.8 -->
+        <profile>
+            <id>mc-1_8</id>
+            <activation>
+                <property>
+                    <name>mc.target</name>
+                    <value>1_8</value>
+                </property>
+            </activation>
+            <properties>
+                <java.release>${java.version.legacy}</java.release>
+                <spigot.api.version>${spigot.api.1_8}</spigot.api.version>
+                <active.impl.module>petrified-impl-legacy-1_8</active.impl.module>
+            </properties>
+        </profile>
+        
+        <!-- Legacy 1.12.2 -->
+        <profile>
+            <id>mc-1_12</id>
+            <activation>
+                <property>
+                    <name>mc.target</name>
+                    <value>1_12</value>
+                </property>
+            </activation>
+            <properties>
+                <java.release>${java.version.legacy}</java.release>
+                <spigot.api.version>${spigot.api.1_12}</spigot.api.version>
+                <active.impl.module>petrified-impl-legacy-1_12</active.impl.module>
+            </properties>
+        </profile>
+        
+        <!-- Legacy 1.16.5 -->
+        <profile>
+            <id>mc-1_16</id>
+            <activation>
+                <property>
+                    <name>mc.target</name>
+                    <value>1_16</value>
+                </property>
+            </activation>
+            <properties>
+                <java.release>${java.version.legacy}</java.release>
+                <spigot.api.version>${spigot.api.1_16}</spigot.api.version>
+                <active.impl.module>petrified-impl-legacy-1_16</active.impl.module>
+            </properties>
+        </profile>
+        
+        <!-- Modern 1.20.1 -->
+        <profile>
+            <id>mc-1_20_R1</id>
+            <activation>
+                <property>
+                    <name>mc.target</name>
+                    <value>1_20_R1</value>
+                </property>
+            </activation>
+            <properties>
+                <java.release>${java.version.modern}</java.release>
+                <paper.api.version>${paper.api.1_20_R1}</paper.api.version>
+                <active.impl.module>petrified-impl-modern-1_20_R1</active.impl.module>
+            </properties>
+        </profile>
+        
+        <!-- Modern 1.20.4 -->
+        <profile>
+            <id>mc-1_20_R2</id>
+            <activation>
+                <property>
+                    <name>mc.target</name>
+                    <value>1_20_R2</value>
+                </property>
+            </activation>
+            <properties>
+                <java.release>${java.version.modern}</java.release>
+                <paper.api.version>${paper.api.1_20_R2}</paper.api.version>
+                <active.impl.module>petrified-impl-modern-1_20_R2</active.impl.module>
+            </properties>
+        </profile>
+        
+        <!-- Contemporary 1.21.1 (default) -->
+        <profile>
+            <id>mc-1_21_R1</id>
+            <activation>
+                <property>
+                    <name>mc.target</name>
+                    <value>1_21_R1</value>
+                </property>
+                <property>
+                    <name>mc.target</name>
+                    <value>!exists</value>
+                </property>
+            </activation>
+            <properties>
+                <java.release>${java.version.contemporary}</java.release>
+                <paper.api.version>${paper.api.1_21_R1}</paper.api.version>
+                <active.impl.module>petrified-impl-contemporary-1_21_R1</active.impl.module>
+            </properties>
+        </profile>
+    </profiles>
+</project>
